@@ -64,56 +64,38 @@
             font-size: 16px;
         }
 
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
         }
 
-        th, td {
+        .gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
             border: 2px solid black;
-            padding: 10px;
-            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
         }
 
-        th {
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
             background-color: yellowgreen;
             color: white;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
         }
-        .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px auto;
-}
 
-.gallery img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-}
-
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: yellowgreen;
-    color: white;
-    text-decoration: none;
-    border: 2px solid black;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-a.button:hover {
-    background-color: green;
-}
-
-
+        a.button:hover {
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -130,7 +112,10 @@ a.button:hover {
     </p>
 
     <h3>Contact Form</h3>
-    <form action="#" method="post" onsubmit="validateForm(event)">
+    <form action="https://formsubmit.co/info@princesscleaningservicesllc.net" method="POST">
+        <input type="hidden" name="_next" value="https://princesscleaningservicesllc.net/thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
+
         <label for="name">Full Name:</label><br>
         <input type="text" id="name" name="name" required><br>
 
@@ -148,64 +133,13 @@ a.button:hover {
         <div><strong>Email:</strong> info@princesscleaningservicesllc.net</div>
     </div>
 
-    <h3>Our Services</h3>
-    <table>
-        <tr>
-            <th>Service Name</th>
-            <th>Price</th>
-            <th>Frequency</th>
-        </tr>
-        <tr>
-            <td>Standard House Cleaning</td>
-            <td>$100</td>
-            <td>Weekly</td>
-        </tr>
-        <tr>
-            <td>Office Cleaning</td>
-            <td>$150</td>
-            <td>Monthly</td>
-        </tr>
-        <tr>
-            <td>Move-in/Move-out Cleaning</td>
-            <td>$200</td>
-            <td>One-time</td>
-        </tr>
-        <tr>
-            <td>Deep Cleaning</td>
-            <td>$180</td>
-            <td>One-time</td>
-        </tr>
-    </table>
-
-    <script>
-        function validateForm(event) {
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            if (!name || !email || !message) {
-                alert("Please fill out all fields.");
-                event.preventDefault();
-                return false;
-            }
-
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
-            if (!email.match(emailPattern)) {
-                alert("Please enter a valid email address.");
-                event.preventDefault();
-                return false;
-            }
-
-            alert("Form submitted successfully!");
-        }
-    </script>    
     <h3>See Our Work</h3>
     <p>
         Want to see real results? Check out our photo gallery of completed jobs.<br>
         <a href="https://princesscleaningservicesllc.net/#gallary" target="_blank" class="button">View Our Gallery</a>
-
     </p>
-        
 </body>
 </html>
+
+
 
